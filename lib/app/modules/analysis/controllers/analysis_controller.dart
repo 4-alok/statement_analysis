@@ -31,6 +31,11 @@ class AnalysisController extends GetxController {
           ? []
           : await analysisService.analysisData.perDaySpending(statement.value!);
 
+  Future<List<WeeklySpending>> get weeklySpending async =>
+      statement.value == null
+          ? []
+          : await analysisService.analysisData.weeklySpending(statement.value!);
+
   @override
   void dispose() {
     path.close();
